@@ -8,7 +8,7 @@ ascii_set = " " * 10 + ".:-i|=+%O#@"
 
 print(len(ascii_set)) #29
 
-def resizeAndPad(img, size, padColor=0):
+def resize(img, size, padColor=0):
 
     h, w = img.shape[:2]
     sh, sw = size
@@ -27,17 +27,11 @@ def resizeAndPad(img, size, padColor=0):
         new_w = sw
         new_h = np.round(new_w/aspect).astype(int)
         pad_vert = (sh-new_h)/2
-        pad_top, pad_bot = np.floor(pad_vert).astype(int), np.ceil(pad_vert).astype(int)
-        pad_left, pad_right = 0, 0
     elif aspect < 1: # vertical image
         new_h = sh
         new_w = np.round(new_h*aspect).astype(int)
-        pad_horz = (sw-new_w)/2
-        pad_left, pad_right = np.floor(pad_horz).astype(int), np.ceil(pad_horz).astype(int)
-        pad_top, pad_bot = 0, 0
     else: # square image
         new_h, new_w = sh, sw
-        pad_left, pad_right, pad_top, pad_bot = 0, 0, 0, 0
 
 	# set pad color
     if len(img.shape) == 3 and not isinstance(padColor, (list, tuple, np.ndarray)): # color image but only one color provided
@@ -55,35 +49,8 @@ def generate_ascii_art(image_array):
 	image_array = cv2.cvtColor(image_array, cv2.COLOR_BGR2GRAY)
 
 	MAX_SIZE = 110
-	IMG_WIDTH, IMG_HEIGHT = image_array.shape
 
-	# if max(IMG_WIDTH, IMG_HEIGHT) > MAX_SIZE:
-
-	# 	"""if IMG_WIDTH > IMG_HEIGHT:
-	# 		scale = (MAX_SIZE / IMG_WIDTH)
-	# 		IMG_WIDTH = MAX_SIZE
-	# 		IMG_HEIGHT = int(IMG_HEIGHT * scale)
-
-	# 	elif IMG_HEIGHT > IMG_WIDTH:
-	# 		scale = (MAX_SIZE/ (IMG_HEIGHT - MAX_SIZE))
-	# 		IMG_HEIGHT = MAX_SIZE
-	# 		IMG_WIDTH = int(IMG_WIDTH * scale)
-
-	# 	elif IMG_WIDTH == IMG_HEIGHT:
-	# 		IMG_WIDTH, IMG_HEIGHT = MAX_SIZE, MAX_SIZE"""
-
-	# 	if True:
-	# 		IMG_WIDTH, IMG_HEIGHT = MAX_SIZE , MAX_SIZE
-
-	# 	print(IMG_WIDTH, IMG_HEIGHT)
-
-
-
-
-
-
-	#resized_image = cv2.resize(image_array, (IMG_WIDTH,IMG_HEIGHT), interpolation = cv2.INTER_AREA)
-	resized_image = resizeAndPad(image_array, (MAX_SIZE, MAX_SIZE), 10)
+	resized_image = resize(image_array, (MAX_SIZE, MAX_SIZE), 10)
 
 	ascii_array = []
 
@@ -99,9 +66,9 @@ def generate_ascii_art(image_array):
 		current_row += "\n"
 		ascii_array.append(current_row)
 
-	with open("output1.txt", "w") as output_file:
-		for row in ascii_array:
-			output_file.write(row)
+	# with open("output.txt", "w") as output_file:
+	# 	for row in ascii_array:
+	# 		output_file.write(row)
 
 	return ascii_array
 
