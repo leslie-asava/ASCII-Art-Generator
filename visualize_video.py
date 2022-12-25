@@ -26,8 +26,8 @@ ascii_array = generate_ascii_art(image_array)
 def process_video():
     global ascii_array
     # Create a VideoCapture object and read from input file
-    cap = cv2.VideoCapture("people.mp4")
-    cap.set(cv2.CAP_PROP_FPS, 5)
+    cap = cv2.VideoCapture("gumball.mp4")
+    cap.set(cv2.CAP_PROP_FPS, 10)
     
     # Check if camera opened successfully
     if (cap.isOpened()== False):
