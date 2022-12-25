@@ -1,4 +1,4 @@
-# Image-to-ASCII
+# Images-to-ASCII-Art
 My implementation of an ASCII art generator using Python. It aims to generate ASCII art from images and videos.
 
 #       Original vs Generated ASCII
