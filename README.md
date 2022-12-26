@@ -5,114 +5,87 @@ My implementation of an ASCII art generator using Python. It aims to generate AS
 ![gumball](https://user-images.githubusercontent.com/51715921/209464016-fa642320-b321-47e1-b2f5-dbf8b2559adb.png)
 <img src="https://user-images.githubusercontent.com/51715921/209464006-a7bb18e6-69bc-43c0-a5e7-c0773fa01001.png" width="189" height="267" />
 
-```@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#-    .O@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%  -ii-  i@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@% :iiiiiii .#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@# :iiiiiiiii -@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#  iiiiiiiiiii +@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@| iiiiiiiiiiii- #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@# ..             i@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@#%|      :-iiiiii-:     |O@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@%:   :-iiiiiiiiiiiiiiiiii:   =#@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@#####@@@@@@@@@@#|   iiiiiiiiiiiiiiiiiiiiiiiiii:  i#@@@@@@@@@@@@@@@@@@@@@
-@@@#+.      .iO@@@@#i  -iiiiiiiiiiiiiiiiiiiiiii--iiiii-  +@@@@@@@@@@@@@@@@@@@@
-@@%  .-iiii-.   i#|  -iiiiiiiiiiiiiiiiiiiiiiii      -iii: :#@@@@@@@@@@@@@@@@@@
-@+ :iiiiiiiiiii-   -ii.   .iiiiiiiiiiiiiiiiiii        -iii  O@@@@@@@@@@@@@@@@@
-# :iiiiiiiiiiii. .ii       iiiiiiiiiiiiiiiiiii-        -iii  O@@@@@@@@@@@@@@@@
-- iiiiiiiiiiii  ii-        iiiiiiiiiiiiiiiiiiiiiii-     iiii: O@@@@@@@@@@@@@@@
- -iiiiiiiiiii  iii      :-iiiiiiiiiiiiiiiiiiiiiiiiii:  :iiiii. #@@@@@@@@@@@@@@
- iiiiiiiiiii  iii-   .iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii  @@@@@@@@@@@@@@
- iiiiiiiiii  iiiii  :iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii =@@@@@@@@@@@@@
- iiiiiiiii  iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii- #@@@@@@@@@@@@
- iiiiiiii: iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii---iiiiiiiiii -@@@@@@@@@@@@
- :iiiiiii :iiiiiiiiiiiiii---iiiiiiiiiiiiiiiiiiii        :iiiiiii- #@@@@@@@@@@@
-- iiiiii  iiiiiiiiiii.         iiiiiiiiiiiiiii  .%#####+  .iiiiii |@@@@@@@@@@@
-+ iiiii- iiiiiiiiii:  =#@@@@#%.  iiiiiiiiiiii  O@@@@@@@@@%  iiiii- @@@@@@@@@@@
-# -iiii  iiiiiiiii  +#@@@@@@@@@O  iiiiiiiiii i#@@@@@@@@@@@#. iiiii O@@@@@@@@@@
-@: iiii -iiiiiiii  #@@@@@@@@@@@@@: iiiiiiii -@@@@@@@@@@@@@@#  iiii |@@@@@@@@@@
-@O iii: iiiiiiii: #@@@@@@@@@@@@@@#. iiiiii: #@@@@@@@@@@@@@@@# -iii: @@@@@@@@@@
-@@ .ii .iiiiiiii %@@@@@@@@@@@@@@@@# :iiiii %@@@@@@#%||%#@@@@@= iii- #@@@@@@@@@
-@@+ ii iiiiiiii .@@@@@@@@#==O@@@@@@+ iiii- @@@@@@#      #@@@@# -iii #@@@@@@@@@
-@@# :- iiiiiiii O@@@@@@#      O@@@@# :iii -@@@@@#        #@@@@: iii O@@@@@@@@@
-@@@+ : iiiiiii- #@@@@@#        #@@@@i iii +@@@@@i        -@@@@= iii %@@@@@@@@@
-@@@#   iiiiiii: @@@@@@|        :@@@@% iii %@@@@@          @@@@% iii +@@@@@@@@@
-@@@@% .iiiiiii.:@@@@@@          #@@@# iii %@@@@#          @@@@% iii .O@@@@@@@@
-@@@@# .iiiiiii -@@@@@@          #@@@# iii +@@@@@          @@@@+ iii-  -#@@@@@@
-@@@@@ .iiiiiii..@@@@@@          #@@@# iii -@@@@@i        |@@@@i iiiiii  +@@@@@
-@@@@@ .iiiiiii- @@@@@@|        :@@@@% iii- @@@@@#        #@@@@ :iiiiiii: =@@@@
-@@@@@ .iiiiiiii #@@@@@#        #@@@@i iiii +@@@@@#     .#@@@@O iiiiiiiiii |@@@
-@@@@@:.iiiiiiii |@@@@@@#      O@@@@# -iiii: #@@@@@@O==O@@@@@@  iiiiiiiiii- +@@
-@@@@@- iiiiiiii- #@@@@@@#O==O#@@@@@+ iiiiii -@@@@@@@@@@@@@@@= iiiiiiiiiiii- #@
-@@@@@| iiiiiiiii :@@@@@@@@@@@@@@@@# :iiiiiii i@@@@@@@@@@@@@+ -iiiiiiiiiiiii .@
-@@@@@+ iiiiiiiiii |@@@@@@@@@@@@@@#  iiiiiiiii  #@@@@@@@@@#i -iiiiiiiiiiiiiii O
-@@@@@O iiiiiiiiii- i#@@@@@@@@@@@#               .i+O@@@#|  iiiiiiiiiiiiiiiii i
-@@@@@# iiiiiiiiiiii  O@@@@@@@@@+    |+%OOO:  :..         :iiiiiiiiiiiiiiiiii: 
-@@@@@@ :iiiiiiiiiiii.  |%O#O%i  -ii  :+OOOO=     .OO+  iiiiiiiiiiiiiiiiiiiiii 
-@@@@@@| iiiiiiiiiiiiii:       :iiiii-   :=OOOOO %OOOOO .iiiiiiiiiiiiiiiiiiiii 
-@@@@@@# iiiiiiiiiiiiiiiiiiiiiiiiiiiiiii-     i= -%%%%= :iiiiiiiiiiiiiiiiiiiii 
-@@@@@@@ -iii  -iiiiiiiiiiiiiiiiiiiiiiiiiiii-.         .iiiiiiiiiiiiiiiiiiiiii 
-@@@@@@@- ii   iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii 
-@@@@@@@O -   iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii-  iiii 
-@@@@@@@#   .iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii   ii- 
-@@@@@@@@% -iiiiiii-iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii.  : :
-@@@@@@@@@ .iiiiii. -iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii-   +
-@@@@@@@@@% -iiii-  iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii  #
-@@@@@@@@@@- iiii  iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii.iiiiiiii :@
-@@@@@@@@@@#  ii  -iiiiii-iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii   iiiiiii #@
-@@@@@@@@@@@# .  :iiiiii-  iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii   iiiii i@@
-@@@@@@@@@@@@%   iiiiiii  -iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii   iii  #@@
-@@@@@@@@@@@@@O  iiiiii  :iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii   i  #@@@
-@@@@@@@@@@@@@@O  -iii:  iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii    O@@@@
-@@@@@@@@@@@@@@@#-  ii  iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii-  #@@@@@
-@@@@@@@@@@@@@@@@@%    :iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii-  |@@@@@@@
-@@@@@@@@@@@@@@@@@@@+   -iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii:  i#@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@#-   .-iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii:    =@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@O|.      :--iiiiiiiiiiiiiiii--:.      -+#@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@##O+i.     .:-iiiiiii-      .-=%##@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#        .-ii @@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@             #@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@O             +@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@i               .@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@% %OO.          - |@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@--OOO% i.       .% @@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@--OOOO OOOO%=:   O @@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@| OOOO%OOOOOOOO% O #@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@% OOOOOOOOOOOOO% O #@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@O OOOO=+OOOOOOO% % %@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@# OOOO.iOOOOOOOO + +@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ OOOO--OOOOOOOO |.|@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ %OOOi:OOOOOOOO:--i@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ +OOO| OOOOOOOOi.|:@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ |OOO= OOOOOOOO| = @@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@: i|=| OOOOOOOO+   #@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|      OOOOOOOO%   #@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@+      %OOOOOOOO   #@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%      %OOOOOOOO   #@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@O      +OOOOOOOO   O@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#      +OOOOOOOO.  +@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#      =OOOOOOOOi  |@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@      iOOOOOOOOO%- O@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ .:.  :+++++++++++.:@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@= -iii               @@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@# -iiii:    .ii:      @@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@i iiiii:             =@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@..- iii.            .#@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@: . i i             O@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#:   :: .            i#@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#=  i  .              +@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#  :iii   |           O@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@+  iiii- O@@           O@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@O :iiii- +@@@           O@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@..iiii: =@@@#           #@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@ :iii  +@@@@O           #@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@=    :#@@@@@%           #@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@#+%#@@@@@@@= OOO% OOO% #@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@--OOO+ OOO% @@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.|OOO= OOO% @@@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%:  .::. ::.  :%@@@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#.  ::.      .:-. :#@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@| -.i-iii  iii-i.: %@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   .  iii  iii  :  i@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@i .. iii-  -iii  : +@@@@@@@@@@@@@@@@@@@@@@@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#.       =i       i#@@@@@@@@@@@@@@@@@@@@@@@```
+```
+@@@@@@@@@@@@@@@@@@@@@@@@@#:   .O@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@O .iii- =@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@# -iiiiii +@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@:.iiiiiiii #@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@% :.      . .@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@Oi    .::---:.   .=#@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@Oi  .iiiiiiiiiiiiiiii  :O@@@@@@@@@@@@@@@@
+@@@+:. ..|O@@@O. .iiiiiiiiiiiiiiiii-iii: -#@@@@@@@@@@@@@@
+@%  -iii-.  i: -iiiiiiiiiiiiiiiii-    .ii. %@@@@@@@@@@@@@
+O -iiiiiiii: :i     iiiiiiiiiiiiii      -ii =@@@@@@@@@@@@
+.-iiiiiiii  i:      iiiiiiiiiiiiiiii:    iii =@@@@@@@@@@@
+ iiiiiiii  ii    -iiiiiiiiiiiiiiiiiiii: :iiii %@@@@@@@@@@
+ iiiiiii  iii  -iiiiiiiiiiiiiiiiiiiiiiiiiiiiii #@@@@@@@@@
+ iiiiii  iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii.-@@@@@@@@@
+ iiiii- iiiiiiiiiiiiiiiiiiiiiiiiiiii.   :iiiiii #@@@@@@@@
+ iiiii -iiiiiii-      :iiiiiiiiii-  |OO+-  iiii:-@@@@@@@@
+i.iii: iiiiiii .%#@@@O: -iiiiiii: %@@@@@@#i iiii #@@@@@@@
+O iii iiiiiii +@@@@@@@@O -iiiii- #@@@@@@@@@+ iii %@@@@@@@
+@ -i- iiiiii %@@@@@@@@@@# -iiii #@@@@@@@@@@@| ii:i@@@@@@@
+@+ i .iiiii i@@@@@@@@@@@@% iii:-@@@@#i .%@@@# ii-.@@@@@@@
+@@ i -iiiii #@@@@%   -#@@@.-ii O@@@#     |@@@i.ii @@@@@@@
+@@+  iiiii-.@@@@O      @@@= ii #@@@.      #@@% ii #@@@@@@
+@@@  iiiii.|@@@@       %@@# ii @@@@       =@@O ii #@@@@@@
+@@@% iiiii.=@@@@       |@@# ii #@@@       +@@O ii. |#@@@@
+@@@O iiiii:i@@@@       +@@# ii O@@@i      #@@= iiii  O@@@
+@@@O iiiii-.@@@@+      #@@% ii.i@@@#     %@@@ -iiiii- O@@
+@@@# iiiiii #@@@@|    O@@@::iii #@@@#%i=#@@@% iiiiiiii O@
+@@@# iiiiii.-@@@@@#O#@@@@O iiii: #@@@@@@@@@# -iiiiiiii- #
+@@@@ iiiiiii +@@@@@@@@@@# -iiiii: O@@@@@@@O :iiiiiiiiii +
+@@@@.iiiiiiii =@@@@@@@@#            -%##%. -iiiiiiiiiii-.
+@@@@-:iiiiiiii  +#@@@#i : :%OOO      :   -iiiiiiiiiiiiii 
+@@@@+ iiiiiiiii-      .iii:  -%O%+ =OOO- iiiiiiiiiiiiiii 
+@@@@# iii-iiiiiiiiiiiiiiiiiii.   .  ==i :iiiiiiiiiiiiiii 
+@@@@@.-i. :iiiiiiiiiiiiiiiiiiiiii-:   .-iiiiiiiiiiiiiiii 
+@@@@@+   :iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii- -ii 
+@@@@@@  -iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii  :i 
+@@@@@@= iiiii iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii.  :
+@@@@@@# -iii  iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii- %
+@@@@@@@% ii  iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii iiiiii #
+@@@@@@@@|   -iiii  iiiiiiiiiiiiiiiiiiiiiiiiiiiii  iiii +@
+@@@@@@@@@i :iiii- :iiiiiiiiiiiiiiiiiiiiiiiiiiiiii  ii :@@
+@@@@@@@@@@| -iii  iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii   .#@@
+@@@@@@@@@@@%  i  iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii- -#@@@
+@@@@@@@@@@@@#i  -iiiiiiiiiiiiiiiiiiiiiiiiiiiiiii-  %@@@@@
+@@@@@@@@@@@@@@#|   -iiiiiiiiiiiiiiiiiiiiiiiii-   +#@@@@@@
+@@@@@@@@@@@@@@@@@#=.     .:-iiiiiiii:..      :+#@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@#O%+|i    :iii: i|=+O#@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@#         .@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@+          O@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@|.=:         O@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@ OOO .      +:@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@ OOO:OOO%=- % @@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@.%OOOOOOOOO.+ @@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@:+OO=%OOOOO-| @@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@i|OO-|OOOOO|: @@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@=-OOiiOOOOO+..#@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@%:OO=-OOOOO% :%@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@O +%=.OOOOOO  =@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@#     OOOOOO  |@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@#     OOOOOO  -@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@     OOOOOO. .@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@     OOOOOO-  @@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@.    %OOOOO+  #@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@:    +%%%%%%%i:@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@O -ii    :::    @@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@ -iii          :@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@ i.ii          O@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@O .  i         i@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@#i . :          i@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@%  ii  :        |@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@= -ii- #@        =@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@# iii: #@@        +@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@# i-  #@@#        +@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@=.:+#@@@# =|. .: %@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@# OO=-OO.O@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@%.%OiiO% %@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@+            #@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@# .-:ii :ii-:..@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@O    ii .ii .  @@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@#.     -      =@@@@@@@@@@@@@@@@@
+
+```
 
